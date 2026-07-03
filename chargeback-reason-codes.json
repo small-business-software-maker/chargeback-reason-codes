@@ -1,0 +1,642 @@
+[
+  {
+    "network": "Visa",
+    "code": "10.4",
+    "title": "Other Fraud — Card-Absent Environment",
+    "plain_english_meaning": "The cardholder says they did not authorize this card-not-present (online/phone) transaction. This is the most common e-commerce fraud chargeback.",
+    "response_deadline": "30 days",
+    "key_evidence": "AVS (address) and CVV2 match results from the authorization; Device fingerprint / IP address matching the cardholder; Proof the customer logged in or used the product after purchase; Signed delivery confirmation to the billing/AVS-matched address; History of prior undisputed orders from the same cardholder",
+    "winnability_label": "Highly winnable",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "10.3",
+    "title": "Other Fraud — Card-Present Environment",
+    "plain_english_meaning": "The cardholder disputes an in-person (card-present) transaction as fraudulent, claiming they did not authorize it at the point of sale.",
+    "response_deadline": "30 days",
+    "key_evidence": "EMV chip read or contactless transaction record; Signed receipt or PIN-verified authorization; Terminal/POS logs showing the card was physically present; Photo or video evidence from the point of sale if available",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "10.1",
+    "title": "EMV Liability Shift Counterfeit Fraud",
+    "plain_english_meaning": "A counterfeit card was used in person at a terminal that was not EMV chip-enabled, shifting fraud liability to the merchant.",
+    "response_deadline": "30 days",
+    "key_evidence": "Proof the terminal was EMV chip-enabled and the chip was read; Transaction record showing chip (not magstripe) acceptance; Authorization and settlement records",
+    "winnability_label": "Highly winnable",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "10.2",
+    "title": "EMV Liability Shift — Non-Counterfeit Fraud",
+    "plain_english_meaning": "A lost or stolen card was used in person at a terminal that was not EMV chip-enabled, shifting fraud liability from the issuer to the merchant.",
+    "response_deadline": "30 days",
+    "key_evidence": "Proof the terminal was EMV chip-enabled and the chip was read (not a magstripe fallback); Transaction record confirming chip-on-chip acceptance; PIN-verified or contactless authorization record if applicable; Authorization and settlement records",
+    "winnability_label": "Highly winnable",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.1",
+    "title": "Merchandise / Services Not Received",
+    "plain_english_meaning": "The cardholder paid but says they never received the merchandise or service by the expected date.",
+    "response_deadline": "30 days",
+    "key_evidence": "Carrier tracking showing delivery to the cardholder address; Signed proof of delivery or photo confirmation; For digital goods: download/access logs with timestamps and IP; Order confirmation and the agreed delivery timeframe; Any customer messages acknowledging receipt",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.2",
+    "title": "Cancelled Recurring Transaction",
+    "plain_english_meaning": "The cardholder says they cancelled a subscription or recurring billing but were charged anyway.",
+    "response_deadline": "30 days",
+    "key_evidence": "Your cancellation policy and the terms the customer accepted at sign-up; Records showing no cancellation request was received before the billing date; Login / usage activity during the disputed billing period; Proof the renewal terms were clearly disclosed at checkout",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.3",
+    "title": "Not as Described or Defective Merchandise",
+    "plain_english_meaning": "The cardholder received the item but claims it was defective or significantly different from how you described it.",
+    "response_deadline": "30 days",
+    "key_evidence": "Your product/service description exactly as shown at checkout; Photos, specs, or QA records proving what shipped matched the listing; Terms, return policy, and refund policy the customer accepted; Communication history about any resolution offered",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.5",
+    "title": "Misrepresentation",
+    "plain_english_meaning": "The cardholder claims the terms of the sale were misrepresented — common with free trials, hidden recurring charges, or undisclosed terms.",
+    "response_deadline": "30 days",
+    "key_evidence": "Screenshots of the offer terms exactly as the customer saw them; Timestamped acceptance of terms / trial disclosure at checkout; Pricing and renewal disclosures shown before purchase",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.6",
+    "title": "Credit Not Processed",
+    "plain_english_meaning": "The cardholder says you promised a refund or credit that never appeared on their statement.",
+    "response_deadline": "30 days",
+    "key_evidence": "Processor refund confirmation with transaction/reference ID; Date the credit was issued and when it settled; Your refund / no-return policy the customer accepted; Communication showing whether a refund was actually owed",
+    "winnability_label": "Often winnable",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.7",
+    "title": "Cancelled Merchandise / Services",
+    "plain_english_meaning": "The cardholder cancelled the order or returned the merchandise per policy but was still charged or not credited.",
+    "response_deadline": "30 days",
+    "key_evidence": "Your cancellation / return policy as accepted at purchase; Records showing whether a valid cancellation or return occurred; Proof of any credit already issued, or that the cancellation was invalid",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "12.5",
+    "title": "Incorrect Amount",
+    "plain_english_meaning": "The cardholder was charged an amount different from what they authorized.",
+    "response_deadline": "30 days",
+    "key_evidence": "The authorized amount vs. the settled amount with order detail; Itemized receipt or invoice the customer agreed to; Proof of any tip, tax, or adjustment the customer authorized",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "12.6.1",
+    "title": "Duplicate Processing",
+    "plain_english_meaning": "The cardholder says a single transaction was processed more than once.",
+    "response_deadline": "30 days",
+    "key_evidence": "Distinct order IDs, auth codes, and line items for each charge; Proof each charge corresponds to a separate purchase; If a true duplicate, evidence the duplicate was already refunded",
+    "winnability_label": "Often winnable",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "11.3",
+    "title": "No Authorization",
+    "plain_english_meaning": "The transaction was completed without obtaining the required authorization approval.",
+    "response_deadline": "30 days",
+    "key_evidence": "Authorization approval code for the transaction; Records showing a valid authorization was obtained at the correct time",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "11.1",
+    "title": "Card Recovery Bulletin",
+    "plain_english_meaning": "The transaction was authorized below the merchant floor limit (or without authorization) at a time the account was listed on the Card Recovery Bulletin / exception file, so a required check was skipped.",
+    "response_deadline": "30 days",
+    "key_evidence": "Authorization approval code obtained for the transaction; Records showing the account was not flagged on the exception file at the time of sale; Proof the transaction was correctly authorized rather than processed below floor limit",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "11.2",
+    "title": "Declined Authorization",
+    "plain_english_meaning": "The transaction was completed after the authorization request was declined (or was processed without a fresh approval), so a charge went through that the issuer had not approved.",
+    "response_deadline": "30 days",
+    "key_evidence": "Authorization approval code showing the transaction was actually approved; Records that the charge was not force-posted after a decline; Proof a fresh, valid authorization was obtained at the time of sale",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "12.1",
+    "title": "Late Presentment",
+    "plain_english_meaning": "The transaction was submitted for settlement outside the timeframe the network allows after authorization, and the issuer was unable to recover funds from the account by the time it cleared.",
+    "response_deadline": "30 days",
+    "key_evidence": "Authorization date and settlement date showing the transaction was presented on time; Transaction processing records with timestamps; Proof the account was still in good standing when the transaction settled",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "10.5",
+    "title": "Visa Fraud Monitoring Program",
+    "plain_english_meaning": "The transaction was flagged under the Visa Fraud Monitoring Program (VFMP), which lets issuers dispute card-absent transactions on accounts the program has identified for excessive fraud activity.",
+    "response_deadline": "30 days",
+    "key_evidence": "AVS (address) and CVV2 match results from the authorization; Device fingerprint / IP address tied to the cardholder; Delivery confirmation to the verified address and proof of product use; Records that the order passed your fraud-screening controls",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.4",
+    "title": "Counterfeit Merchandise",
+    "plain_english_meaning": "The cardholder claims the merchandise they received was counterfeit, and that a regulatory or governmental authority identified or seized it as counterfeit.",
+    "response_deadline": "30 days",
+    "key_evidence": "Proof of authenticity or licensing for the merchandise (supplier invoices, brand authorization); The product description and listing the customer accepted at checkout; Documentation contradicting any claim that an authority identified the goods as counterfeit; Your return/refund policy and any resolution offered",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.8",
+    "title": "Original Credit Transaction Not Accepted",
+    "plain_english_meaning": "The cardholder declines an Original Credit Transaction (a push payment/credit to their card) — for example because it is prohibited in their jurisdiction or they did not want to accept the funds.",
+    "response_deadline": "30 days",
+    "key_evidence": "Records of the Original Credit Transaction and the cardholder agreement to receive it; Proof the credit was valid and permitted for the recipient and jurisdiction; Communication authorizing the push payment to the card",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Visa",
+    "code": "13.9",
+    "title": "Non-Receipt of Cash or Load Transaction Value",
+    "plain_english_meaning": "The cardholder says they did not receive the cash they requested at a terminal (such as an ATM or cash-back transaction) or the value they expected from loading a prepaid account.",
+    "response_deadline": "30 days",
+    "key_evidence": "Terminal / ATM dispense records and journal logs for the transaction; Proof the cash was dispensed or the prepaid value was loaded; Reconciliation records showing the account was funded correctly",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Visa Core Rules and Visa Product and Service Rules; Visa Dispute Resolution (Visa Claims Resolution) documentation"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4837",
+    "title": "No Cardholder Authorization",
+    "plain_english_meaning": "The cardholder claims they did not authorize or participate in the transaction — Mastercard’s primary fraud chargeback.",
+    "response_deadline": "45 days",
+    "key_evidence": "AVS and CVC2 match results from the authorization; Device fingerprint / IP address tied to the cardholder; Proof of product access or use after the purchase; Delivery confirmation to the verified address; Prior undisputed purchase history from the same cardholder",
+    "winnability_label": "Highly winnable",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4853",
+    "title": "Cardholder Dispute (Goods/Services Not as Described or Defective)",
+    "plain_english_meaning": "A broad consumer-dispute code: goods or services not received, not as described, defective, or a cancelled recurring charge.",
+    "response_deadline": "45 days",
+    "key_evidence": "The product/service description the customer accepted; Proof of delivery or proof the item matched the description; Terms, cancellation, and refund policy accepted at purchase; Communication history about any resolution offered",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4855",
+    "title": "Goods or Services Not Provided",
+    "plain_english_meaning": "The cardholder paid but says the merchandise or service was never delivered or rendered.",
+    "response_deadline": "45 days",
+    "key_evidence": "Carrier tracking showing delivery to the cardholder; Signed proof of delivery or digital access logs; Order confirmation and agreed delivery window",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4834",
+    "title": "Point-of-Interaction Error (Duplicate / Incorrect Amount)",
+    "plain_english_meaning": "A processing error — the cardholder was charged more than once or for an incorrect amount.",
+    "response_deadline": "45 days",
+    "key_evidence": "Distinct order IDs and auth codes for each charge; Itemized totals matching the authorized amounts; Proof of refund if a genuine duplicate occurred",
+    "winnability_label": "Often winnable",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4841",
+    "title": "Cancelled Recurring or Digital Goods Transaction",
+    "plain_english_meaning": "The cardholder cancelled a recurring billing or digital subscription but was charged again.",
+    "response_deadline": "45 days",
+    "key_evidence": "Renewal terms and cancellation policy accepted at sign-up; Records showing no cancellation request before the billing date; Usage / login activity during the disputed period",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4808",
+    "title": "Authorization-Related Chargeback",
+    "plain_english_meaning": "The transaction lacked a valid authorization, or the authorization was declined or expired.",
+    "response_deadline": "45 days",
+    "key_evidence": "Valid authorization approval code for the transaction; Records the authorization was obtained and not expired at settlement",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4863",
+    "title": "Cardholder Does Not Recognize",
+    "plain_english_meaning": "The cardholder does not recognize the transaction on their statement (often a billing-descriptor confusion rather than true fraud).",
+    "response_deadline": "45 days",
+    "key_evidence": "Clear billing-descriptor records matching your business name; Order details, receipt, and customer information; Proof the customer placed and received the order",
+    "winnability_label": "Highly winnable",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4870",
+    "title": "Chip Liability Shift — Counterfeit Fraud",
+    "plain_english_meaning": "A counterfeit card was used in a card-present transaction that was not processed via the EMV chip (for example a magstripe fallback on a chip-capable card), shifting counterfeit-fraud liability to the merchant. Mastercard's lost-or-stolen chip-liability variant is the separate code 4871.",
+    "response_deadline": "45 days",
+    "key_evidence": "Proof the terminal was EMV-certified and the chip was read (not a magstripe fallback); Transaction record confirming chip-on-chip acceptance; Authorization log showing EMV data was transmitted in the authorization request",
+    "winnability_label": "Highly winnable",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4871",
+    "title": "Chip Liability Shift — Lost / Stolen / Never Received Fraud",
+    "plain_english_meaning": "Fraud occurred on a lost, stolen, or never-received card in a card-present transaction that was not completed with chip-and-PIN, shifting liability to the merchant.",
+    "response_deadline": "45 days",
+    "key_evidence": "Records that the terminal was EMV chip-and-PIN certified and the chip was read; Proof PIN verification was performed at the point of sale; Transaction record showing chip (not magstripe) acceptance; Authorization and settlement records",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4812",
+    "title": "Account Number Not on File",
+    "plain_english_meaning": "The transaction was processed against a card account number that did not exist on the issuer’s file at the time of the transaction.",
+    "response_deadline": "45 days",
+    "key_evidence": "Authorization approval code and the account number as submitted; Records showing the card number was entered and authorized correctly; Proof a valid authorization response was received for the account",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "Mastercard",
+    "code": "4850",
+    "title": "Installment Billing Dispute",
+    "plain_english_meaning": "In participating countries, the cardholder disputes an installment charge — for example claiming the installment plan was not what they agreed to, or that an installment was billed incorrectly.",
+    "response_deadline": "45 days",
+    "key_evidence": "The installment plan terms the cardholder accepted at purchase; Schedule of installments and the amount due for the disputed billing; Records showing the installment was billed per the agreed schedule; Proof of any credit issued if an installment was billed in error",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Mastercard Chargeback Guide"
+  },
+  {
+    "network": "American Express",
+    "code": "F29",
+    "title": "Card Not Present Fraud",
+    "plain_english_meaning": "The cardholder disputes a card-not-present transaction as fraudulent — Amex’s primary online fraud code.",
+    "response_deadline": "20 days",
+    "key_evidence": "AVS and CID match results from the authorization; Device fingerprint / IP tied to the cardholder; Proof of delivery or product access after purchase; Prior undisputed order history from the cardholder",
+    "winnability_label": "Highly winnable",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "C08",
+    "title": "Goods/Services Not Received or Only Partially Received",
+    "plain_english_meaning": "The cardholder paid but says they did not receive the goods or services, or received only part of the order.",
+    "response_deadline": "20 days",
+    "key_evidence": "Carrier tracking with delivery confirmation; Digital access logs for non-physical goods; Order details and agreed delivery timeframe",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "C31",
+    "title": "Goods/Services Not as Described",
+    "plain_english_meaning": "The cardholder received the item but says it was materially different from what was described.",
+    "response_deadline": "20 days",
+    "key_evidence": "The product description the customer accepted at checkout; Proof the delivered item matched the listing; Return/refund policy accepted at purchase",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "C02",
+    "title": "Credit Not Processed",
+    "plain_english_meaning": "The cardholder expected a credit or refund that was not processed.",
+    "response_deadline": "20 days",
+    "key_evidence": "Processor refund confirmation and reference ID; Settlement date of the credit; Refund policy accepted by the customer (if no credit was owed)",
+    "winnability_label": "Often winnable",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "C04",
+    "title": "Goods/Services Returned or Refused",
+    "plain_english_meaning": "The cardmember returned merchandise or refused delivery and claims a credit was not applied to their account.",
+    "response_deadline": "20 days",
+    "key_evidence": "Your return and refund policy accepted at purchase; Proof the return did not meet your policy criteria, or that goods were not returned in acceptable condition; Refund confirmation and reference ID if a credit was already issued; Communication records about the return or refusal",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "C05",
+    "title": "Goods/Services Cancelled",
+    "plain_english_meaning": "The cardholder cancelled the order or service but was charged or not refunded.",
+    "response_deadline": "20 days",
+    "key_evidence": "Cancellation policy accepted at purchase; Records of whether a valid cancellation occurred; Usage during the period billed, or proof of credit issued",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "P05",
+    "title": "Incorrect Charge Amount",
+    "plain_english_meaning": "The amount charged differs from the amount the cardholder authorized.",
+    "response_deadline": "20 days",
+    "key_evidence": "Authorized vs. settled amount with itemized detail; Receipt or invoice the customer approved",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "P08",
+    "title": "Duplicate Charge",
+    "plain_english_meaning": "The cardholder says they were charged more than once for a single purchase.",
+    "response_deadline": "20 days",
+    "key_evidence": "Distinct order IDs and auth codes for each charge; Proof each charge was a separate purchase; Refund proof if a genuine duplicate occurred",
+    "winnability_label": "Often winnable",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "F10",
+    "title": "Missing Imprint",
+    "plain_english_meaning": "The cardholder disputes a transaction as fraudulent and Amex says no card imprint or equivalent record exists proving the card was present.",
+    "response_deadline": "20 days",
+    "key_evidence": "Transaction record showing the card was read (chip, swipe, or contactless); Signed receipt or terminal record tying the card to the sale; Any imprint or point-of-sale capture of the card details",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "F14",
+    "title": "Multiple ROCs",
+    "plain_english_meaning": "The merchant submitted more than one Record of Charge (ROC) for the cardholder, and the cardholder denies participating in the additional charge records — saying they authorized one transaction, not the extra ones.",
+    "response_deadline": "20 days",
+    "key_evidence": "A signed receipt or Record of Charge for the specific disputed charge; Proof each Record of Charge is a separate, authorized transaction (distinct order IDs, dates, or items); Evidence of a recurring or installment agreement if the extra charges were expected; Proof of any credit already issued if a genuine duplicate occurred",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "F24",
+    "title": "No Cardmember Authorization",
+    "plain_english_meaning": "The cardholder acknowledges other purchases with you but says they did not authorize this specific transaction.",
+    "response_deadline": "20 days",
+    "key_evidence": "AVS and CID match results from the authorization; Device fingerprint / IP tied to the cardholder; Proof of delivery or product access for this transaction; Prior undisputed order history from the same cardholder",
+    "winnability_label": "Highly winnable",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "F30",
+    "title": "EMV Counterfeit Fraud",
+    "plain_english_meaning": "The cardholder denies a card-present transaction in which a counterfeit chip card was used, and the chip was not properly processed.",
+    "response_deadline": "20 days",
+    "key_evidence": "Proof the terminal was EMV chip-enabled and the chip was read; Transaction record showing chip (not magstripe) acceptance; Authorization and settlement records",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "F31",
+    "title": "EMV Lost / Stolen / Non-Received Fraud",
+    "plain_english_meaning": "The cardholder denies a card-present transaction made with a lost, stolen, or never-received chip card that was not properly processed via the EMV chip.",
+    "response_deadline": "20 days",
+    "key_evidence": "Proof the terminal was EMV chip-and-PIN certified and the chip was read; PIN verification record for the transaction; Authorization and settlement records",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "A01",
+    "title": "Charge Amount Exceeds Authorization Amount",
+    "plain_english_meaning": "The amount you billed was higher than the amount Amex authorized for the transaction.",
+    "response_deadline": "20 days",
+    "key_evidence": "Authorization approval amount vs. the amount billed; Itemized record of any disclosed tip, tax, or adjustment; Proof the billed amount matched what the cardholder authorized",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "A02",
+    "title": "No Valid Authorization",
+    "plain_english_meaning": "You did not obtain a valid authorization — the charge was declined or the card had expired when the transaction was processed.",
+    "response_deadline": "20 days",
+    "key_evidence": "Authorization approval code obtained at the time of sale; Records showing the card was valid and not expired; Proof the charge was not processed after a decline",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "A08",
+    "title": "Authorization Approval Expired",
+    "plain_english_meaning": "You submitted the transaction after the authorization approval had already expired.",
+    "response_deadline": "20 days",
+    "key_evidence": "Authorization date and the settlement date showing the charge was timely; Records proving the transaction settled within the approval window; A fresh authorization if the original had aged",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "C14",
+    "title": "Paid by Other Means",
+    "plain_english_meaning": "The cardholder says they were billed on their Amex card for a purchase they already paid for by another method.",
+    "response_deadline": "20 days",
+    "key_evidence": "Records showing the Amex charge corresponds to a distinct, unpaid purchase; Proof no other payment was applied to this same order; Itemized order and payment records",
+    "winnability_label": "Often winnable",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "C18",
+    "title": "“No Show” or CARDeposit Cancelled",
+    "plain_english_meaning": "The cardholder says a lodging or reservation was cancelled, or that an expected credit for a CARDeposit charge was not received.",
+    "response_deadline": "20 days",
+    "key_evidence": "Your cancellation / no-show policy as accepted at booking; Records showing whether a valid cancellation occurred within policy; Proof of any credit already issued, or that a no-show charge was valid",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "C28",
+    "title": "Cancelled Recurring Billing",
+    "plain_english_meaning": "The cardholder says they cancelled a recurring or subscription charge but were billed anyway.",
+    "response_deadline": "20 days",
+    "key_evidence": "Subscription terms and recurring-billing disclosure accepted at sign-up; Records showing no cancellation request was received before the billing date; Login or usage activity during the disputed billing period; Renewal notification sent before the charge, if applicable",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "M10",
+    "title": "Vehicle Rental — Capital Damages",
+    "plain_english_meaning": "The cardholder disputes a charge you billed for capital damages to a rented vehicle.",
+    "response_deadline": "20 days",
+    "key_evidence": "Rental agreement and the damage-liability terms the cardholder accepted; Documentation of the damage (inspection reports, photos, repair invoices); Proof the charged amount reflects the actual damage cost",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "M49",
+    "title": "Vehicle Rental — Theft or Loss of Use",
+    "plain_english_meaning": "The cardholder disputes a charge you billed for theft of, or loss of use of, a rented vehicle.",
+    "response_deadline": "20 days",
+    "key_evidence": "Rental agreement and the theft / loss-of-use terms the cardholder accepted; Police report or incident documentation for the theft; Records substantiating the loss-of-use period and amount charged",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "R03",
+    "title": "Insufficient Reply",
+    "plain_english_meaning": "Amex requested more information about a transaction and you replied, but the documentation provided was not sufficient to resolve the inquiry.",
+    "response_deadline": "20 days",
+    "key_evidence": "The complete transaction record Amex requested (receipt, order, delivery proof); A clear written response addressing each point in the inquiry; Supporting documentation specific to the disputed transaction",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "American Express",
+    "code": "R13",
+    "title": "No Reply",
+    "plain_english_meaning": "Amex sent an inquiry about a transaction and did not receive a response within the required time, so the dispute proceeded by default.",
+    "response_deadline": "20 days",
+    "key_evidence": "The complete transaction record Amex originally requested; A timely written response addressing the inquiry; Proof of the records supporting the transaction",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "American Express Merchant Reference Guide and Dispute (Chargeback) documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "UD",
+    "title": "Unauthorized / Disputed (Cardmember Does Not Recognize)",
+    "plain_english_meaning": "The Discover cardmember disputes the transaction as unauthorized or unrecognized.",
+    "response_deadline": "30 days",
+    "key_evidence": "AVS and CID match results; Device / IP evidence tied to the cardmember; Delivery confirmation and proof of product use; Clear billing descriptor and order history",
+    "winnability_label": "Highly winnable",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "RG",
+    "title": "Non-Receipt of Goods or Services",
+    "plain_english_meaning": "The Discover cardmember paid but says they never received the goods or services.",
+    "response_deadline": "30 days",
+    "key_evidence": "Carrier tracking with delivery confirmation; Digital access logs for non-physical goods; Agreed delivery timeframe and order details",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "RM",
+    "title": "Quality of Goods or Services (Not as Described)",
+    "plain_english_meaning": "The cardmember received the item but says its quality or description was misrepresented.",
+    "response_deadline": "30 days",
+    "key_evidence": "Accurate product/service description accepted at checkout; Proof the delivered item matched the listing; Return/refund policy and any resolution offered",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "CD",
+    "title": "Credit Not Processed",
+    "plain_english_meaning": "The cardmember expected a credit or refund that was never processed.",
+    "response_deadline": "30 days",
+    "key_evidence": "Refund confirmation and reference ID; Settlement date of the credit; Refund policy if no credit was owed",
+    "winnability_label": "Often winnable",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "DP",
+    "title": "Duplicate Processing",
+    "plain_english_meaning": "The cardmember says a single transaction was processed more than once.",
+    "response_deadline": "30 days",
+    "key_evidence": "Distinct order IDs and auth codes for each charge; Proof each charge was a separate purchase; Refund proof for any genuine duplicate",
+    "winnability_label": "Often winnable",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "AP",
+    "title": "Recurring Payments",
+    "plain_english_meaning": "The Discover cardmember disputes a recurring or subscription charge, typically claiming they cancelled or did not authorize the ongoing billing.",
+    "response_deadline": "30 days",
+    "key_evidence": "Subscription terms and recurring billing disclosure accepted at sign-up; Cancellation policy and records showing no cancellation request was received before the billing date; Login or usage activity during the disputed billing period; Renewal notification sent before the charge, if applicable",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "AA",
+    "title": "Does Not Recognize",
+    "plain_english_meaning": "The Discover cardmember does not recognize the transaction on their statement — a recognition dispute that often resolves once the merchant and purchase are identified.",
+    "response_deadline": "30 days",
+    "key_evidence": "A clear billing descriptor and the merchant name shown to the cardmember; Order details, AVS/CID results, and device/IP tied to the cardmember; Delivery confirmation or proof of product use",
+    "winnability_label": "Highly winnable",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "NA",
+    "title": "No Authorization",
+    "plain_english_meaning": "The transaction was processed without obtaining a valid authorization — for example after a decline, or by bypassing the authorization request.",
+    "response_deadline": "30 days",
+    "key_evidence": "Authorization approval code obtained at the time of sale; Records showing the charge was not processed after a decline; Proof a valid authorization response was received",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "IC",
+    "title": "Illegible Sales Data",
+    "plain_english_meaning": "The sales data or receipt the merchant provided was illegible, so the transaction details could not be read to resolve the dispute.",
+    "response_deadline": "30 days",
+    "key_evidence": "A clear, legible copy of the sales receipt or transaction record; Itemized order details and the amount charged; Any supporting documentation tied to the transaction",
+    "winnability_label": "Winnable with strong evidence",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  },
+  {
+    "network": "Discover",
+    "code": "UA",
+    "title": "Fraud — Cardmember Does Not Recognize / Unauthorized",
+    "plain_english_meaning": "The Discover cardmember claims the transaction was fraudulent or unauthorized — the merchant-facing fraud dispute code, with variants for card-present, card-not-present, and chip transactions.",
+    "response_deadline": "30 days",
+    "key_evidence": "AVS and CID match results from the authorization; Device fingerprint / IP tied to the cardmember (card-not-present); EMV chip / PIN or signed receipt records (card-present); Delivery confirmation, proof of product use, and prior order history",
+    "winnability_label": "Highly winnable",
+    "source": "Discover Network Dispute Rules and Reason Code documentation"
+  }
+]
